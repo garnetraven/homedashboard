@@ -31,14 +31,6 @@ def login():
   access_token = create_access_token(identity=username)
   return jsonify({'token': access_token}), 200
 
-@app.route('/refresh', methods=['POST'])
-def refresh():
-    print("refresh request")
-    old_token = request.get_data()
-    new_token = guard.refresh_jwt_token(old_token)
-    ret = {'access_token': new_token}
-    return ret, 200
-
 @app.route('/protected', methods=['GET'])
 @jwt_required()
 def protected():
