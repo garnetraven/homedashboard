@@ -16,9 +16,9 @@ root.render(
 
 import { Routes, Route, Link } from 'react-router-dom';
 
-import Home from './pages/home';
-import Login from './pages/login';
-import Dashboard from './pages/dashboard';
+import Home from './pages/home/home';
+import Login from './pages/login/login';
+import Dashboard from './pages/dashboard/dashboard';
 import NoMatch from './pages/nomatch';
 
 function App() {

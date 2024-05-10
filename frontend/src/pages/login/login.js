@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Navbar from "../components/navbar";
+import Navbar from "../../components/navbar/navbar";
 
 function Login(props) {
   const [username, setUsername] = useState("");
