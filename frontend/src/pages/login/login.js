@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Navbar from "../../components/navbar/navbar";
-
-function Login(props) {
+function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
       const response = await axios.post("http://localhost:5001/login", { username, password });
       localStorage.setItem("token", response.data.token);
@@ -22,7 +20,6 @@ function Login(props) {
 
   return (
     <div>
-      <Navbar />
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -38,9 +35,6 @@ function Login(props) {
           onChange={(e) => setPassword(e.target.value)}
         />
         {error && <p>{error}</p>}
-        <p>
-          Don't have an account? <Link to="/signup">Sign up</Link>
-        </p>
         <button type="submit">Login</button>
       </form> 
     </div>

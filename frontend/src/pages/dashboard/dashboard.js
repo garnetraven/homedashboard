@@ -1,10 +1,9 @@
-import Navbar from "../../components/navbar/navbar";
-
 function Dashboard() {
   return (
     <div>
-      <Navbar />
       <h1>Dashboard</h1>
+      <h2>Welcome, User</h2>
+      <h3>Today's weather looks like: </h3>
     </div>
   );
 }
